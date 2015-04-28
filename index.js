@@ -38,7 +38,11 @@ app.post('/products/add', products.add);
 //this should be a post but this is only an illustration of CRUD - not on good practices
 app.get('/products/delete/:id', products.delete);
 
+app.get("*", function(req, res, next){
+  res.redirect("products")
+})
+
 //start everything up
-app.listen(4000, function () {
+app.listen(3000, function () {
     console.log('express-handlebars example server listening' );
 });
